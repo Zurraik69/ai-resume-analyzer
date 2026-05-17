@@ -17,7 +17,7 @@ app.use(cors())
 app.use(express.json())
 
 const upload = multer({
-    dest: "uploads/"
+     storage: multer.memoryStorage()
 })
 
 app.get("/", (req, res) => {
@@ -34,7 +34,7 @@ app.post("/upload", upload.single("resume"), async (req, res) => {
         })
     }
 
-    const dataBuffer = fs.readFileSync(req.file.path)
+    const dataBuffer = req.file.buffer
 
     const pdfData = await pdfParse(dataBuffer)
 
