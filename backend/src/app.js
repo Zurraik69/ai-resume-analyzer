@@ -10,7 +10,13 @@ const app = express()
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-    baseURL: "https://openrouter.ai/api/v1"
+    baseURL: "https://openrouter.ai/api/v1",
+
+    defaultHeaders: {
+        "HTTP-Referer": "https://ai-resume-analyzer-one-pi.vercel.app",
+        "X-Title": "AI Resume Analyzer"
+
+    }
 })
 
 app.use(cors())
