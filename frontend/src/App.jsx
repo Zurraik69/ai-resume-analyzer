@@ -23,7 +23,7 @@ function App() {
       setLoading(true)
 
       const response = await axios.post(
-        "https://ai-resume-analyzer-jc6i.onrender.com/analyze",
+        "https://ai-resume-analyzer-jc6i.onrender.com/upload",
         formData
       )
 
