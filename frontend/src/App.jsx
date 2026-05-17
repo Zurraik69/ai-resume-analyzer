@@ -23,7 +23,7 @@ function App() {
       setLoading(true)
 
       const response = await axios.post(
-        "http://localhost:3000/upload",
+        "https://ai-resume-analyzer-jc6i.onrender.com",
         formData
       )
 
